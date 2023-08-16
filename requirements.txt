@@ -1,5 +1,10 @@
 pandas
 numpy
 seaborn
+matplotlib
+scikit-learn
+catboost
+xgboost
+dataclasses
 # will trigger setup.py (so that setup also runs when requirements are installed.)
--e .
+# -e .
