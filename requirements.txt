@@ -7,5 +7,6 @@ catboost
 xgboost
 dataclasses
 dill
+flask
 # will trigger setup.py (so that setup also runs when requirements are installed.)
 # -e .

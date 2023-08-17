@@ -37,8 +37,8 @@ class ModelTrainer:
                 test_array[:,-1]
             )
             models = {
-                "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
+                "Random Forest": RandomForestRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
                 "XGBRegressor": XGBRegressor(),
@@ -105,7 +105,9 @@ class ModelTrainer:
                 obj=best_model
             )
 
-            predicted=best_model.predict(X_test)
+            # since name with model() are assigned in "models" dict, fitting the model after taking it from that dict 
+            # will fit it in the dict itself then calling the name from the dict will give us a fitted model.
+            predicted= best_model.predict(X_test) 
 
             r2_square = r2_score(y_test, predicted)
             return r2_square
